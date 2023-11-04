@@ -5,7 +5,7 @@ import win32con
 
 # Fungsi untuk mengatur gaya jendela
 def set_window_style(hwnd):
-    # Menghilangkan tombol maximize (WS_MAXIMIZEBOX)
+    # Menghilangkan tombol maximize (WS_MAXIMIZEBOX) ndak guna (gtw gwe dh lama ga cek ni file)
     style = win32gui.GetWindowLong(hwnd, win32con.GWL_STYLE)
     style = style & ~win32con.WS_MAXIMIZEBOX
     win32gui.SetWindowLong(hwnd, win32con.GWL_STYLE, style)
@@ -26,7 +26,7 @@ def check_winner():
         messagebox.showinfo("Tic-Tac-Toe", "It's a draw!")
         restart_button.grid(row=4, columnspan=3)
 
-# Fungsi untuk mengubah giliran pemain
+# Fungsiny untuk mengubah giliran pemain 
 def change_player():
     global current_player
     if current_player == "X":
@@ -35,13 +35,13 @@ def change_player():
         current_player = "X"
     turn_label.config(text=f"Player {current_player}'s turn")
 
-# Fungsi untuk mengulang permainan
+# Fungsi untuk mengulang permainan / repeat the game
 def restart_game():
     global current_player, game_active
     current_player = "X"
     game_active = True
     turn_label.config(text=f"Player {current_player}'s turn")
-    restart_button.grid_remove()  # Menghilangkan tombol restart dari tampilan
+    restart_button.grid_remove()  # ngilangin tombol restart dari tampilan RAWRRR
     for button in buttons:
         button.config(text="", bg='white')
 
@@ -53,7 +53,7 @@ root.title("Tic-Tac-Toe")
 current_player = "X"
 game_active = True
 
-# Membuat label "nama mu"
+# gawe/membuat label "nama mu"
 author_label = tk.Label(root, text="Dibuat oleh (your name)", font=('normal', 12))
 author_label.grid(row=0, columnspan=3, pady=(10, 0))
 
